@@ -11,9 +11,13 @@ Before you begin, ensure you have the following installed on your machine:
 ## Getting Started
 
 1. Clone the repository:
+   `git clone git@github.com:VodeniZeko/nodeJS-basic.git`
 
 2. Navigate to the project directory:
+   `cd nodeJS-basic`
 
-3. Navigate to the project directory:
+3. Install dependencies:
+   `npm i`
 
 4. Run the application:
+   `npm start`
