@@ -27,7 +27,9 @@ sessionsRouter.route('/').get((req,res) => {
 
 sessionsRouter.route('/:id').get((req,res) => {
   const id = req.params.id;
-    res.send(`hello from ${id}`)
+    res.render("session", {
+      session: sessions[id],
+    })
 })
 app.use("/sessions", sessionsRouter);
 
