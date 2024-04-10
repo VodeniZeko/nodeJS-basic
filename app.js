@@ -8,17 +8,25 @@ const debug = require("debug")("app");
 const path = require("path");
 //morgan is used for logging requests to the console
 const morgan = require("morgan");
+const { title } = require("process");
 
-const PORT = 2000;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
 app.use(morgan("tiny"));
 app.use(express.static(path.join(__dirname, "/public/")));
 
+//
+app.set("views", "./src/views/");
+app.set("view engine", "ejs");
+
 // Root endpoint
 app.get("/", (req, res) => {
-  res.send("Hello from basic NodeJS application!");
+  res.render("index", {
+    title: "the homepage!",
+    data: ["one", "two", "three"],
+  });
 });
 
 app.listen(PORT, () => {
