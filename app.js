@@ -9,7 +9,7 @@ const path = require("path");
 //morgan is used for logging requests to the console
 const morgan = require("morgan");
 
-const PORT = 3000;
+const PORT = 2000;
 
 const app = express();
 
