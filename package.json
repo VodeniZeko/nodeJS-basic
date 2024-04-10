@@ -22,7 +22,7 @@
     }
   },
   "scripts": {
-    "start": "DEBUG=app nodemon node app.js",
+    "start": "DEBUG=app,app:* nodemon node app.js",
     "debug": "DEBUG=* nodemon node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
