@@ -20,6 +20,33 @@
     />
     <link href="css/style-home.css" rel="stylesheet" />
     <link rel="shortcut icon" type="image/x-icon" href="images/G.png" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .profile {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .profile h1 {
+            font-size: 2rem;
+            margin-top: 20px;
+        }
+        .profile p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+    </style>
   </head>
 
   <body>
@@ -142,9 +169,11 @@
         </div>
       </header>
 
-      <p>Title: <%= session.title %></p>
-      <p>Speaker: <%= session.speakers[0].name %></p>
-      <p>Description: <%= session.description %> </p>
+      <div class="profile">
+        <img src="images/avatar2.svg" alt="Profile Picture">
+        <h1><%= user.username %></h1>
+        <p><%= user.password %></p>
+    </div>
 
       <footer>
         <div class="container">

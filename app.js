@@ -22,7 +22,7 @@ const sessionsRouter = require("./src/routers/sessionsRouter");
 const adminRouter = require("./src/routers/adminRouter");
 const authRouter = require("./src/routers/authRouter");
 
-
+//middleware
 app.use(morgan("tiny"));
 app.use(express.static(path.join(__dirname, "/public/")));
 app.use(express.json());

@@ -5,6 +5,14 @@ const {username, password, host, database} = require('../../config');
 
 const sessionsRouter = express.Router();
 
+sessionsRouter.use((req,res,next) => {
+  if(req.user){
+    next();
+  } else {
+    res.redirect("/auth/signIn");
+  }
+})
+
 sessionsRouter.route("/").get((req, res) => {
   const url = `mongodb+srv://${username}:${password}@${host}/?retryWrites=true&w=majority&appName=${database}`;
   const dbName = `${database}`;
